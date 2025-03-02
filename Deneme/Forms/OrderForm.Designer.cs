@@ -60,17 +60,19 @@
             // 
             // label2
             // 
+            label2.AutoEllipsis = true;
             label2.Font = new Font("Segoe UI", 16F);
-            label2.Location = new Point(337, 20);
+            label2.Location = new Point(357, 18);
             label2.Name = "label2";
-            label2.Size = new Size(229, 36);
+            label2.Size = new Size(271, 36);
             label2.TabIndex = 0;
             label2.Text = "Sipariş Yönetimi";
+            label2.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblOrderStatus
             // 
             lblOrderStatus.AutoSize = true;
-            lblOrderStatus.Location = new Point(172, 79);
+            lblOrderStatus.Location = new Point(185, 79);
             lblOrderStatus.Name = "lblOrderStatus";
             lblOrderStatus.Size = new Size(57, 20);
             lblOrderStatus.TabIndex = 0;
@@ -103,7 +105,7 @@
             // 
             // button1
             // 
-            button1.Location = new Point(24, 133);
+            button1.Location = new Point(24, 149);
             button1.Name = "button1";
             button1.Size = new Size(130, 51);
             button1.TabIndex = 3;
@@ -112,7 +114,7 @@
             // 
             // btnMainCourse
             // 
-            btnMainCourse.Location = new Point(24, 200);
+            btnMainCourse.Location = new Point(24, 228);
             btnMainCourse.Name = "btnMainCourse";
             btnMainCourse.Size = new Size(130, 51);
             btnMainCourse.TabIndex = 3;
@@ -122,7 +124,7 @@
             // 
             // btnDesserts
             // 
-            btnDesserts.Location = new Point(24, 268);
+            btnDesserts.Location = new Point(24, 299);
             btnDesserts.Name = "btnDesserts";
             btnDesserts.Size = new Size(130, 51);
             btnDesserts.TabIndex = 3;
@@ -132,7 +134,7 @@
             // 
             // btnBeverages
             // 
-            btnBeverages.Location = new Point(24, 334);
+            btnBeverages.Location = new Point(24, 373);
             btnBeverages.Name = "btnBeverages";
             btnBeverages.Size = new Size(130, 51);
             btnBeverages.TabIndex = 3;
@@ -142,9 +144,9 @@
             // 
             // button5
             // 
-            button5.Location = new Point(24, 422);
+            button5.Location = new Point(24, 18);
             button5.Name = "button5";
-            button5.Size = new Size(130, 51);
+            button5.Size = new Size(158, 30);
             button5.TabIndex = 3;
             button5.Text = "Ana Menüye Dön";
             button5.UseVisualStyleBackColor = true;
@@ -152,10 +154,10 @@
             // dataGridView1
             // 
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(185, 133);
+            dataGridView1.Location = new Point(184, 121);
             dataGridView1.Name = "dataGridView1";
             dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(681, 340);
+            dataGridView1.Size = new Size(708, 340);
             dataGridView1.TabIndex = 4;
             dataGridView1.CellContentClick += dataGridView1_CellContentClick;
             dataGridView1.CellEndEdit += dataGridView1_CellEndEdit;
@@ -213,7 +215,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(905, 667);
+            ClientSize = new Size(904, 592);
             Controls.Add(btnOrderHistory);
             Controls.Add(btnAddNote);
             Controls.Add(btnPayment);

@@ -51,6 +51,8 @@ namespace Deneme.Forms
 
         private void OrderForm_Load(object sender, EventArgs e)
         {
+            //Form yüklenirken yeni sipariş oluştur.
+            CreateNewOrder();
             // DataGridView'i ayarla
             SetupDataGridView();
 
@@ -64,6 +66,8 @@ namespace Deneme.Forms
             // Form üzerinde bir numericUpDown veya textBox kullanarak masa numarasını göster
             // numericUpDownTable.Value = _tableNumber;
             nmrTable.Value = _orderService.GetAll().Count();
+
+            // textBoxTable.Text = _tableNumber.ToString();
 
         }
 
@@ -295,8 +299,7 @@ namespace Deneme.Forms
             // Sipariş detaylarını ekle
             foreach (var detail in _orderDetails)
             {
-                dataGridView1.Rows.Add(
-                    detail.MenuItemId,
+                dataGridView1.Rows.Add(                    
                     detail.MenuItemName,
                     detail.Quantity,
                     detail.Price.ToString("C"),
@@ -359,7 +362,13 @@ namespace Deneme.Forms
 
         private void CreateNewOrder()
         {
-            throw new NotImplementedException();
+            // Yeni bir sipariş oluştur
+            _currentOrder = new Order
+            {
+                OrderDate = DateTime.Now,
+                TableNumber = _tableNumber,
+                Status = "Beklemede"
+            };
         }
         // Masa değiştirmek için
         private void ChangeTable(int newTableNumber)
