@@ -34,7 +34,7 @@
             lblTotalAmount = new Label();
             nmrTable = new NumericUpDown();
             label5 = new Label();
-            button1 = new Button();
+            btnStarters = new Button();
             btnMainCourse = new Button();
             btnDesserts = new Button();
             btnBeverages = new Button();
@@ -103,14 +103,15 @@
             label5.TabIndex = 2;
             label5.Text = "Not:";
             // 
-            // button1
+            // btnStarters
             // 
-            button1.Location = new Point(24, 149);
-            button1.Name = "button1";
-            button1.Size = new Size(130, 51);
-            button1.TabIndex = 3;
-            button1.Text = "Starters";
-            button1.UseVisualStyleBackColor = true;
+            btnStarters.Location = new Point(24, 149);
+            btnStarters.Name = "btnStarters";
+            btnStarters.Size = new Size(130, 51);
+            btnStarters.TabIndex = 3;
+            btnStarters.Text = "Starters";
+            btnStarters.UseVisualStyleBackColor = true;
+            btnStarters.Click += btnStarters_Click;
             // 
             // btnMainCourse
             // 
@@ -226,7 +227,7 @@
             Controls.Add(btnBeverages);
             Controls.Add(btnDesserts);
             Controls.Add(btnMainCourse);
-            Controls.Add(button1);
+            Controls.Add(btnStarters);
             Controls.Add(label5);
             Controls.Add(nmrTable);
             Controls.Add(label2);
@@ -250,7 +251,7 @@
         private Label lblTotalAmount;
         private NumericUpDown nmrTable;
         private Label label5;
-        private Button button1;
+        private Button btnStarters;
         private Button btnMainCourse;
         private Button btnDesserts;
         private Button btnBeverages;

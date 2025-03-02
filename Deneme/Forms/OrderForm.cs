@@ -299,7 +299,7 @@ namespace Deneme.Forms
             // Sipariş detaylarını ekle
             foreach (var detail in _orderDetails)
             {
-                dataGridView1.Rows.Add(                    
+                dataGridView1.Rows.Add(
                     detail.MenuItemName,
                     detail.Quantity,
                     detail.Price.ToString("C"),
@@ -626,7 +626,7 @@ namespace Deneme.Forms
                 // Siparişleri ekle
                 foreach (var order in allOrders)
                 {
-                    dataGridView.Rows.Add(                        
+                    dataGridView.Rows.Add(
                         order.OrderDate.ToString("dd.MM.yyyy HH:mm"),
                         order.TableNumber,
                         order.Status,
@@ -710,6 +710,11 @@ namespace Deneme.Forms
                 MessageBox.Show($"Sipariş detayları görüntülenirken hata oluştu: {ex.Message}", "Hata",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void btnStarters_Click(object sender, EventArgs e)
+        {
+            ShowCategoryItems("Starters");
         }
     }
 }
