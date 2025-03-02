@@ -274,14 +274,33 @@ namespace Deneme.Forms
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            // Silme butonuna tıklandığında ilgili ürünü sil
+            //// Silme butonuna tıklandığında ilgili ürünü sil
+            //if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["RemoveButton"].Index)
+            //{
+            //    // Eğer sipariş tamamlanmadıysa ürünü silebilir
+            //    if (_currentOrder.Status != "Tamamlandı")
+            //    {
+            //        _orderDetails.RemoveAt(e.RowIndex);
+            //        RefreshOrderDetailsGrid();
+            //    }
+            //    else
+            //    {
+            //        MessageBox.Show("Tamamlanmış siparişten ürün çıkarılamaz!", "Uyarı",
+            //            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            //    }
+            //}
+            // Satır ve sütun indeksinin geçerli olup olmadığını kontrol et
             if (e.RowIndex >= 0 && e.ColumnIndex == dataGridView1.Columns["RemoveButton"].Index)
             {
                 // Eğer sipariş tamamlanmadıysa ürünü silebilir
                 if (_currentOrder.Status != "Tamamlandı")
                 {
-                    _orderDetails.RemoveAt(e.RowIndex);
-                    RefreshOrderDetailsGrid();
+                    // Geçerli satırın ürünlerini sil
+                    if (e.RowIndex < _orderDetails.Count) // Satırın geçerli olup olmadığını kontrol et
+                    {
+                        _orderDetails.RemoveAt(e.RowIndex);
+                        RefreshOrderDetailsGrid();
+                    }
                 }
                 else
                 {
