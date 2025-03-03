@@ -33,7 +33,7 @@
             lblOrderStatus = new Label();
             lblTotalAmount = new Label();
             nmrTable = new NumericUpDown();
-            label5 = new Label();
+            lblOrderNotes = new Label();
             btnStarters = new Button();
             btnMainCourse = new Button();
             btnDesserts = new Button();
@@ -94,14 +94,14 @@
             nmrTable.Size = new Size(61, 27);
             nmrTable.TabIndex = 1;
             // 
-            // label5
+            // lblOrderNotes
             // 
-            label5.AutoSize = true;
-            label5.Location = new Point(538, 81);
-            label5.Name = "label5";
-            label5.Size = new Size(37, 20);
-            label5.TabIndex = 2;
-            label5.Text = "Not:";
+            lblOrderNotes.AutoSize = true;
+            lblOrderNotes.Location = new Point(538, 81);
+            lblOrderNotes.Name = "lblOrderNotes";
+            lblOrderNotes.Size = new Size(37, 20);
+            lblOrderNotes.TabIndex = 2;
+            lblOrderNotes.Text = "Not:";
             // 
             // btnStarters
             // 
@@ -228,7 +228,7 @@
             Controls.Add(btnDesserts);
             Controls.Add(btnMainCourse);
             Controls.Add(btnStarters);
-            Controls.Add(label5);
+            Controls.Add(lblOrderNotes);
             Controls.Add(nmrTable);
             Controls.Add(label2);
             Controls.Add(lblTotalAmount);
@@ -250,7 +250,7 @@
         private Label lblOrderStatus;
         private Label lblTotalAmount;
         private NumericUpDown nmrTable;
-        private Label label5;
+        private Label lblOrderNotes;
         private Button btnStarters;
         private Button btnMainCourse;
         private Button btnDesserts;

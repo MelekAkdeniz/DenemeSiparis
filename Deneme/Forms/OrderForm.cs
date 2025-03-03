@@ -251,8 +251,6 @@ namespace Deneme.Forms
                     // Yeni ürün ekle
                     var orderDetail = new OrderDetail
                     {
-                        OrderId = _currentOrder.Id,
-                        MenuItemId = secilenUrun.Id,
                         MenuItemName = secilenUrun.Name,
                         Price = secilenUrun.Price,
                         Quantity = 1,
@@ -319,10 +317,12 @@ namespace Deneme.Forms
             foreach (var detail in _orderDetails)
             {
                 dataGridView1.Rows.Add(
+
                     detail.MenuItemName,
                     detail.Quantity,
-                    detail.Price.ToString("C"),
-                    detail.TotalPrice.ToString("C")
+                    detail.Price.ToString("C")
+                // detail.TotalPrice.ToString("C")
+
                 );
             }
 
@@ -558,7 +558,7 @@ namespace Deneme.Forms
                     _currentOrder.Notes = note;
 
                     // Not bilgisini form üzerinde göster - bir label kontrolü eklenebilir
-                    // lblOrderNotes.Text = $"Not: {note}";
+                    lblOrderNotes.Text = $"Not: {note}";
 
                     MessageBox.Show("Sipariş notu eklendi.", "Bilgi",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -716,8 +716,8 @@ namespace Deneme.Forms
                     dataGridView.Rows.Add(
                         detail.MenuItemName,
                         detail.Quantity,
-                        detail.Price.ToString("C"),
-                        detail.TotalPrice.ToString("C")
+                        detail.Price.ToString("C")
+                    //detail.TotalPrice.ToString("C")
                     );
                 }
 
