@@ -86,9 +86,9 @@ namespace Deneme.Forms
                 });
                 dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
                 {
-                    Name = "ProductName",
+                    Name = "MenuItemName",
                     HeaderText = "Ürün Adı",
-                    DataPropertyName = "ProductName",
+                    DataPropertyName = "MenuItemName",
                     Width = 150
                 });
                 dataGridView1.Columns.Add(new DataGridViewTextBoxColumn
@@ -249,13 +249,18 @@ namespace Deneme.Forms
                 else
                 {
                     // Yeni ürün ekle
-                    var orderDetail = new OrderDetail
-                    {
-                        MenuItemName = secilenUrun.Name,
-                        Price = secilenUrun.Price,
-                        Quantity = 1,
-                        TotalPrice = secilenUrun.Price
-                    };
+                    var orderDetail = new OrderDetail();                   
+                    orderDetail.MenuItemName = secilenUrun.Name;
+                    orderDetail.Price = secilenUrun.Price;
+                    orderDetail.Quantity = 1;
+                    //orderDetail.TotalPrice = secilenUrun.Price;
+
+                    //{
+                    //    MenuItemName = secilenUrun.Name,
+                    //    Price = secilenUrun.Price,
+                    //    Quantity = 1,
+                    //    TotalPrice = secilenUrun.Price
+                    //};
 
                     _orderDetails.Add(orderDetail);
                 }
@@ -316,13 +321,13 @@ namespace Deneme.Forms
             // Sipariş detaylarını ekle
             foreach (var detail in _orderDetails)
             {
-                dataGridView1.Rows.Add(
 
+                dataGridView1.Rows.Add(                    
+                    "sil",
                     detail.MenuItemName,
-                    detail.Quantity,
-                    detail.Price.ToString("C")
-                // detail.TotalPrice.ToString("C")
-
+                    detail.Price.ToString("C"),
+                    detail.Quantity
+                    //detail.TotalPrice.ToString("C")
                 );
             }
 
@@ -705,7 +710,7 @@ namespace Deneme.Forms
                 };
 
                 // Sütunları ekle
-                dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Name", HeaderText = "Ürün Adı", Width = 150 });
+                dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "MenuItemName", HeaderText = "Ürün Adı", Width = 150 });
                 dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Quantity", HeaderText = "Adet", Width = 50 });
                 dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Price", HeaderText = "Birim Fiyat", Width = 100 });
                 dataGridView.Columns.Add(new DataGridViewTextBoxColumn { Name = "Total", HeaderText = "Toplam", Width = 100 });
@@ -716,8 +721,8 @@ namespace Deneme.Forms
                     dataGridView.Rows.Add(
                         detail.MenuItemName,
                         detail.Quantity,
-                        detail.Price.ToString("C")
-                    //detail.TotalPrice.ToString("C")
+                        detail.Price.ToString("C"),
+                    detail.TotalPrice.ToString("C")
                     );
                 }
 
